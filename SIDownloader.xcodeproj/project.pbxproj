@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B92ECFA15A92DBB00C56137 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B92ECF915A92DBB00C56137 /* UIKit.framework */; };
+		5B92ECFC15A92DBB00C56137 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B92ECFB15A92DBB00C56137 /* Foundation.framework */; };
+		5B92ECFE15A92DBB00C56137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B92ECFD15A92DBB00C56137 /* CoreGraphics.framework */; };
+		5B92ED0415A92DBB00C56137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B92ED0215A92DBB00C56137 /* InfoPlist.strings */; };
+		5B92ED0615A92DBB00C56137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B92ED0515A92DBB00C56137 /* main.m */; };
+		5B92ED0A15A92DBB00C56137 /* SIDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B92ED0915A92DBB00C56137 /* SIDAppDelegate.m */; };
+		5B92ED0D15A92DBB00C56137 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B92ED0B15A92DBB00C56137 /* MainStoryboard.storyboard */; };
+		5B92ED1015A92DBB00C56137 /* SIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B92ED0F15A92DBB00C56137 /* SIDViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5B92ECF515A92DBB00C56137 /* SIDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B92ECF915A92DBB00C56137 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5B92ECFB15A92DBB00C56137 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5B92ECFD15A92DBB00C56137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5B92ED0115A92DBB00C56137 /* SIDownloader-Info.plist */ = {isa = PBXFileReference; path = "SIDownloader-Info.plist"; sourceTree = "<group>"; };
+		5B92ED0315A92DBB00C56137 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B92ED0515A92DBB00C56137 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5B92ED0715A92DBB00C56137 /* SIDownloader-Prefix.pch */ = {isa = PBXFileReference; path = "SIDownloader-Prefix.pch"; sourceTree = "<group>"; };
+		5B92ED0815A92DBB00C56137 /* SIDAppDelegate.h */ = {isa = PBXFileReference; path = SIDAppDelegate.h; sourceTree = "<group>"; };
+		5B92ED0915A92DBB00C56137 /* SIDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIDAppDelegate.m; sourceTree = "<group>"; };
+		5B92ED0C15A92DBB00C56137 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5B92ED0E15A92DBB00C56137 /* SIDViewController.h */ = {isa = PBXFileReference; path = SIDViewController.h; sourceTree = "<group>"; };
+		5B92ED0F15A92DBB00C56137 /* SIDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIDViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B92ECF215A92DBB00C56137 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B92ECFA15A92DBB00C56137 /* UIKit.framework in Frameworks */,
+				5B92ECFC15A92DBB00C56137 /* Foundation.framework in Frameworks */,
+				5B92ECFE15A92DBB00C56137 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B92ECEA15A92DBA00C56137 = {
+			isa = PBXGroup;
+			children = (
+				5B92ECFF15A92DBB00C56137 /* SIDownloader */,
+				5B92ECF815A92DBB00C56137 /* Frameworks */,
+				5B92ECF615A92DBB00C56137 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B92ECF615A92DBB00C56137 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B92ECF515A92DBB00C56137 /* SIDownloader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B92ECF815A92DBB00C56137 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B92ECF915A92DBB00C56137 /* UIKit.framework */,
+				5B92ECFB15A92DBB00C56137 /* Foundation.framework */,
+				5B92ECFD15A92DBB00C56137 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B92ECFF15A92DBB00C56137 /* SIDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				5B92ED0815A92DBB00C56137 /* SIDAppDelegate.h */,
+				5B92ED0915A92DBB00C56137 /* SIDAppDelegate.m */,
+				5B92ED0B15A92DBB00C56137 /* MainStoryboard.storyboard */,
+				5B92ED0E15A92DBB00C56137 /* SIDViewController.h */,
+				5B92ED0F15A92DBB00C56137 /* SIDViewController.m */,
+				5B92ED0015A92DBB00C56137 /* Supporting Files */,
+			);
+			path = SIDownloader;
+			sourceTree = "<group>";
+		};
+		5B92ED0015A92DBB00C56137 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B92ED0115A92DBB00C56137 /* SIDownloader-Info.plist */,
+				5B92ED0215A92DBB00C56137 /* InfoPlist.strings */,
+				5B92ED0515A92DBB00C56137 /* main.m */,
+				5B92ED0715A92DBB00C56137 /* SIDownloader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B92ECF415A92DBB00C56137 /* SIDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B92ED1315A92DBB00C56137 /* Build configuration list for PBXNativeTarget "SIDownloader" */;
+			buildPhases = (
+				5B92ECF115A92DBB00C56137 /* Sources */,
+				5B92ECF215A92DBB00C56137 /* Frameworks */,
+				5B92ECF315A92DBB00C56137 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SIDownloader;
+			productName = SIDownloader;
+			productReference = 5B92ECF515A92DBB00C56137 /* SIDownloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B92ECEC15A92DBA00C56137 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SID;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = sumi;
+			};
+			buildConfigurationList = 5B92ECEF15A92DBA00C56137 /* Build configuration list for PBXProject "SIDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5B92ECEA15A92DBA00C56137;
+			productRefGroup = 5B92ECF615A92DBB00C56137 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B92ECF415A92DBB00C56137 /* SIDownloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B92ECF315A92DBB00C56137 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B92ED0415A92DBB00C56137 /* InfoPlist.strings in Resources */,
+				5B92ED0D15A92DBB00C56137 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B92ECF115A92DBB00C56137 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B92ED0615A92DBB00C56137 /* main.m in Sources */,
+				5B92ED0A15A92DBB00C56137 /* SIDAppDelegate.m in Sources */,
+				5B92ED1015A92DBB00C56137 /* SIDViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5B92ED0215A92DBB00C56137 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B92ED0315A92DBB00C56137 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5B92ED0B15A92DBB00C56137 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B92ED0C15A92DBB00C56137 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B92ED1115A92DBB00C56137 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5B92ED1215A92DBB00C56137 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B92ED1415A92DBB00C56137 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SIDownloader/SIDownloader-Prefix.pch";
+				INFOPLIST_FILE = "SIDownloader/SIDownloader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5B92ED1515A92DBB00C56137 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SIDownloader/SIDownloader-Prefix.pch";
+				INFOPLIST_FILE = "SIDownloader/SIDownloader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B92ECEF15A92DBA00C56137 /* Build configuration list for PBXProject "SIDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B92ED1115A92DBB00C56137 /* Debug */,
+				5B92ED1215A92DBB00C56137 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B92ED1315A92DBB00C56137 /* Build configuration list for PBXNativeTarget "SIDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B92ED1415A92DBB00C56137 /* Debug */,
+				5B92ED1515A92DBB00C56137 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B92ECEC15A92DBA00C56137 /* Project object */;
+}
