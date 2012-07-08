@@ -50,8 +50,9 @@
     NSString  *tempDoucment = NSTemporaryDirectory();
     NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@"/"];
     NSRange lastCharRange = [paramFilePath rangeOfCharacterFromSet:charSet options:NSBackwardsSearch];
-    NSString *tempFilePath = [NSString stringWithFormat:@"%@%@.temp", tempDoucment, [paramFilePath substringFromIndex:lastCharRange.location + 1]];
-    NSLog(@"###tempFilePath:%@", tempFilePath);
+    NSString *tempFilePath = [NSString stringWithFormat:@"%@%@.temp", 
+                              tempDoucment, 
+                              [paramFilePath substringFromIndex:lastCharRange.location + 1]];
     
     SIBreakpointsDownload *operation = [SIBreakpointsDownload operationWithURLString:paramURL 
                                                                               params:nil 
