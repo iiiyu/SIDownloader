@@ -1,11 +1,3 @@
----
-layout: post
-title: "iOS笔记(8)"
-date: 2012-07-07 21:15
-comments: true
-categories: iOS
----
-
 
 # iOS笔记 基于MKNetworkKit的断点续传
 
@@ -63,73 +55,73 @@ categories: iOS
 找到MKNetworkOperation.m文件
 ``` objc
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
- 
+
   NSUInteger size = [self.response expectedContentLength] < 0 ? 0 : [self.response expectedContentLength];
   self.response = (NSHTTPURLResponse*) response;
- 
+
   // dont' save data if the operation was created to download directly to a stream.
   if([self.downloadStreams count] == 0)
     self.mutableData = [NSMutableData dataWithCapacity:size];
   else
     self.mutableData = nil;
- 
+
   for(NSOutputStream *stream in self.downloadStreams)
     [stream open];
- 
+
   NSDictionary *httpHeaders = [self.response allHeaderFields];
- 
+
   // if you attach a stream to the operation, MKNetworkKit will not cache the response.
   // Streams are usually "big data chunks" that doesn't need caching anyways.
- 
+
   if([self.request.HTTPMethod isEqualToString:@"GET"] && [self.downloadStreams count] == 0) {
-   
+
     // We have all this complicated cache handling since NSURLRequestReloadRevalidatingCacheData is not implemented
     // do cache processing only if the request is a "GET" method
     NSString *lastModified = [httpHeaders objectForKey:@"Last-Modified"];
     NSString *eTag = [httpHeaders objectForKey:@"ETag"];
     NSString *expiresOn = [httpHeaders objectForKey:@"Expires"];
-   
+
     NSString *contentType = [httpHeaders objectForKey:@"Content-Type"];
     // if contentType is image,
-   
+
     NSDate *expiresOnDate = nil;
-   
+
     if([contentType rangeOfString:@"image"].location != NSNotFound) {
-     
+
       // For images let's assume a expiry date of 7 days if there is no eTag or Last Modified.
       if(!eTag && !lastModified)
         expiresOnDate = [[NSDate date] dateByAddingTimeInterval:kMKNetworkKitDefaultImageCacheDuration];
-      else   
+      else
         expiresOnDate = [[NSDate date] dateByAddingTimeInterval:kMKNetworkKitDefaultImageHeadRequestDuration];
     }
-   
+
     NSString *cacheControl = [httpHeaders objectForKey:@"Cache-Control"]; // max-age, must-revalidate, no-cache
     NSArray *cacheControlEntities = [cacheControl componentsSeparatedByString:@","];
-   
+
     for(NSString *substring in cacheControlEntities) {
-     
+
       if([substring rangeOfString:@"max-age"].location != NSNotFound) {
-       
+
         // do some processing to calculate expiresOn
         NSString *maxAge = nil;
         NSArray *array = [substring componentsSeparatedByString:@"="];
         if([array count] > 1)
           maxAge = [array objectAtIndex:1];
-       
+
         expiresOnDate = [[NSDate date] dateByAddingTimeInterval:[maxAge intValue]];
       }
       if([substring rangeOfString:@"no-cache"].location != NSNotFound) {
-       
+
         // Don't cache this request
         expiresOnDate = [[NSDate date] dateByAddingTimeInterval:kMKNetworkKitDefaultCacheDuration];
       }
     }
-   
-    // if there was a cacheControl entity, we would have a expiresOnDate that is not nil.       
+
+    // if there was a cacheControl entity, we would have a expiresOnDate that is not nil.
     // "Cache-Control" headers take precedence over "Expires" headers
-   
+
     expiresOn = [expiresOnDate rfc1123String];
-   
+
     // now remember lastModified, eTag and expires for this request in cache
     if(expiresOn)
       [self.cacheHeaders setObject:expiresOn forKey:@"Expires"];
@@ -138,7 +130,7 @@ categories: iOS
     if(eTag)
       [self.cacheHeaders setObject:eTag forKey:@"ETag"];
   }
-   
+
     if ([self.mutableData length] == 0 || [self.downloadStreams count] > 0) {
         // This is the first batch of data
         // Check for a range header and make changes as neccesary
@@ -153,29 +145,29 @@ categories: iOS
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
- 
 
- 
+
+
   if([self.downloadStreams count] == 0)
     [self.mutableData appendData:data];
- 
+
   for(NSOutputStream *stream in self.downloadStreams) {
-   
+
     if ([stream hasSpaceAvailable]) {
       const uint8_t *dataBuffer = [data bytes];
       [stream write:&dataBuffer[0] maxLength:[data length]];
-    }       
+    }
   }
- 
+
   self.downloadedDataSize += [data length];
- 
+
   for(MKNKProgressBlock downloadProgressBlock in self.downloadProgressChangedHandlers) {
-   
+
     if([self.response expectedContentLength] > 0) {
-     
+
       double progress = (double)(self.downloadedDataSize) / (double)(self.startPosition + [self.response expectedContentLength]);
       downloadProgressBlock(progress);
-    }       
+    }
   }
 }
 ```
@@ -194,12 +186,12 @@ categories: iOS
 demo地址
 
 	git@github.com:iiiyu/SIDownloader.git
-	
+
 其实已经很简单了，照着demo改改就能自己用了。
 
 ## 总结
 这次改写以后，代码结构变的很清晰。复杂性和耦合性都有所降低。可用性提高。而且，反正我是没有google到可以直接拿来用的断点下载库。这次娃哈哈就有了。然后blog也2月没有更新，鄙视自己。以后应该会慢慢更新恢复正常。最后，希望对大家有所帮助。
 
 
-	
-	
+
+
