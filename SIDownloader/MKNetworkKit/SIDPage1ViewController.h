@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SIDownloadManager.h"
+#import "SIBreakpointsDownload.h"
 
-@interface SIDPage1ViewController : UIViewController
+@interface SIDPage1ViewController : UIViewController<SIDownloadManagerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *buttonDownloadOne;
+@property (weak, nonatomic) IBOutlet UIButton *buttonPauseOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelOne;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *progressViewOne;
+@property (weak, nonatomic) IBOutlet UIButton *buttonDeleteOne;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonDownloadTwo;
+@property (weak, nonatomic) IBOutlet UIButton *buttonPauseTwo;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressViewTwo;
+@property (weak, nonatomic) IBOutlet UIButton *buttonDeleteTwo;
+
 
 @end
